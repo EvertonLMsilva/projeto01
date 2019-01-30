@@ -1,0 +1,25 @@
+﻿@model Site01.Models.Palavra
+@{
+    Layout = "_Layout";   
+}
+@{
+    ViewBag.Title = "Palavra - Cadastrar";
+}
+<div class="container">
+    <form method="post">
+        <imput type="hidden" name="id" value="@Model.Id">
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" value="@Model.Nome" class="form-control" id="nome" placeholder="Digite seu nome:">
+                @Html.ValidationMessage("nome")
+
+            </div>
+            <div class="form-group">
+                <label for="nivel">Nivel</label>
+                <input type="text" name="nivel" class="form-control" value="@Model.Nivel" id="nivel" placeholder="Digite o nivel: 1 - Fácil, 2 - Médio, 3 - Diícil">
+                @Html.ValidationMessage("nivel")
+            </div>
+
+            <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+</div>
